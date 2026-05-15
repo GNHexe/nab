@@ -1101,7 +1101,7 @@ function VisitPage() {
       <section className="grid grid-cols-1 sm:grid-cols-3 border-t border-b" style={{ borderColor: C.line, background: C.paperWarm }}>
         {[
           { icon: <MapPin size={18} />, label: 'LOCATION', main: 'DAMSIBU', sub: 'LUNI GEOG · PARO · BHUTAN' },
-          { icon: <Phone size={18} />, label: 'HOURS', main: '11—23H', sub: 'OPEN DAILY' },
+          { icon: <Phone size={18} />, label: 'HOURS', main: '10—22H', sub: 'TOURS 10—17H · CLOSED SUN' },
           { icon: <Plane size={18} />, label: 'ALTITUDE', main: '2,195M', sub: 'HIMALAYAN HIGHLAND' },
         ].map((item, i) => (
           <motion.div
