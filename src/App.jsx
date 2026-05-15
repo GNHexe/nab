@@ -333,17 +333,26 @@ function PatternBand({ color = C.gold, height = 36, opacity = 1, animate = true 
   );
 }
 
-// The BHUTANESE wordmark — real artwork
+// The BHUTANESE wordmark — real artwork, tinted via CSS mask
 function BhutaneseWordmark({ color = C.ink, height = 40, maxWidth = '100%' }) {
   return (
-    <img
-      src="/images/IMG_6950.PNG"
-      alt="BHUTANESE"
+    <div
+      role="img"
+      aria-label="BHUTANESE"
       style={{
         display: 'block',
         height,
-        width: 'auto',
+        aspectRatio: '5000 / 1150',
         maxWidth,
+        backgroundColor: color,
+        WebkitMaskImage: 'url(/images/IMG_6950.PNG)',
+        maskImage: 'url(/images/IMG_6950.PNG)',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
       }}
     />
   );
@@ -392,7 +401,7 @@ function Nav({ page, setPage, dark }) {
       <div className="px-5 sm:px-8 py-3.5 flex items-center justify-between">
         <button onClick={() => setPage('home')} className="flex items-center gap-3">
           <div style={{ height: 22 }}>
-            <BhutaneseWordmark color={accent} height={22} />
+            <BhutaneseWordmark color={dark ? '#C9A96E' : C.ink} height={22} />
           </div>
         </button>
 
@@ -468,15 +477,8 @@ function Footer({ dark }) {
   return (
     <footer style={{ background: bg, color: text }} className="border-t" >
       <div className="px-5 sm:px-8 pt-12 pb-6">
-        <div className="flex justify-center mb-6">
-          <img
-            src="/images/IMG_6949.PNG"
-            alt="Namgay Artisanal Brewery crest"
-            style={{ height: 80, width: 'auto', display: 'block' }}
-          />
-        </div>
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8">
-          <div className="sm:col-span-6">
+          <div className="sm:col-span-4">
             <div style={{ height: 36 }}>
               <BhutaneseWordmark color={text} height={36} />
             </div>
@@ -486,6 +488,14 @@ function Footer({ dark }) {
                 Brewing with red rice since 2015.
               </p>
             </div>
+          </div>
+
+          <div className="sm:col-span-2 flex items-center justify-center">
+            <img
+              src="/images/IMG_6949.PNG"
+              alt="Namgay Artisanal Brewery crest"
+              style={{ height: 80, width: 'auto', display: 'block' }}
+            />
           </div>
 
           <div className="sm:col-span-3">
@@ -600,7 +610,7 @@ function HomePage({ setPage }) {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="w-full"
           >
-            <BhutaneseWordmark color={C.bone} height={56} maxWidth="100%" />
+            <BhutaneseWordmark color={C.bone} height={80} maxWidth="100%" />
           </motion.div>
 
           <motion.div
