@@ -1280,11 +1280,27 @@ function VisitPage() {
 function WholesalePage() {
   const [form, setForm] = useState({ name: '', company: '', country: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const submit = () => {
-    if (!form.name || !form.email) return;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+  const submit = async () => {
+    if (!form.name || !form.email || sending) return;
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('https://formspree.io/f/mrejwrbq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Submission failed');
+      setSent(true);
+      setForm({ name: '', company: '', country: '', email: '', message: '' });
+    } catch (err) {
+      setError('Could not send — please try again or use WhatsApp.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -1513,12 +1529,18 @@ function WholesalePage() {
             <div className="col-span-12 md:col-span-6">
               <button
                 onClick={submit}
-                className="w-full px-5 py-4 text-[11px] uppercase transition-opacity hover:opacity-90 flex items-center justify-between"
+                disabled={sending || sent}
+                className="w-full px-5 py-4 text-[11px] uppercase transition-opacity hover:opacity-90 flex items-center justify-between disabled:opacity-70"
                 style={{ fontFamily: "'IBM Plex Mono', monospace", background: C.gold, color: C.ink, letterSpacing: '0.14em' }}
               >
-                <span>{sent ? '✓ SENT — WE WILL REPLY SOON' : 'SEND ENQUIRY'}</span>
-                {!sent && <ArrowUpRight size={12} />}
+                <span>{sent ? '✓ SENT — WE WILL REPLY SOON' : sending ? 'SENDING…' : 'SEND ENQUIRY'}</span>
+                {!sent && !sending && <ArrowUpRight size={12} />}
               </button>
+              {error && (
+                <div className="mt-2 text-[10px]" style={{ fontFamily: "'IBM Plex Mono', monospace", color: '#ff8a8a', letterSpacing: '0.14em' }}>
+                  {error}
+                </div>
+              )}
             </div>
             <div className="col-span-12 md:col-span-6">
               <a
