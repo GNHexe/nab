@@ -400,9 +400,18 @@ function Nav({ page, setPage, dark }) {
     >
       <div className="px-5 sm:px-8 py-3.5 flex items-center justify-between">
         <button onClick={() => setPage('home')} className="flex items-center gap-3">
-          <div style={{ height: 22 }}>
-            <BhutaneseWordmark color={dark ? '#C9A96E' : C.ink} height={22} />
-          </div>
+          <img
+            src="/images/IMG_6950.PNG"
+            alt="BHUTANESE"
+            style={{
+              height: 22,
+              width: 'auto',
+              display: 'block',
+              filter: dark
+                ? 'brightness(0) saturate(100%) invert(74%) sepia(35%) saturate(500%) hue-rotate(5deg)'
+                : 'none',
+            }}
+          />
         </button>
 
         <div className="hidden md:flex items-center gap-1">
