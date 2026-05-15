@@ -1257,7 +1257,9 @@ function VisitPage() {
               <span className="opacity-50 text-[10px]">08-272977</span>
             </a>
             <a
-              href="#"
+              href="https://wa.me/97517503688"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-between gap-3 px-5 py-4 text-[11px] uppercase transition-opacity hover:opacity-90"
               style={{ fontFamily: "'IBM Plex Mono', monospace", background: '#25D366', color: '#fff', letterSpacing: '0.14em' }}
             >
@@ -1545,7 +1547,9 @@ function WholesalePage() {
             </div>
             <div className="col-span-12 md:col-span-6">
               <a
-                href="#"
+                href="https://wa.me/97517503688"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full px-5 py-4 text-[11px] uppercase transition-opacity hover:opacity-90 flex items-center justify-between"
                 style={{ fontFamily: "'IBM Plex Mono', monospace", background: '#25D366', color: '#fff', letterSpacing: '0.14em' }}
               >
