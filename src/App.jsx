@@ -510,10 +510,10 @@ function Footer({ dark }) {
           <div className="sm:col-span-3">
             <Mono color={accent} className="text-[10px] block mb-2.5">FOLLOW</Mono>
             <div className="flex gap-2">
-              <a href="#" className="p-2.5 border transition-opacity hover:opacity-60" style={{ borderColor: muted, color: text }}>
+              <a href="https://www.instagram.com/bhutanesebeer/" target="_blank" rel="noopener noreferrer" className="p-2.5 border transition-opacity hover:opacity-60" style={{ borderColor: muted, color: text }}>
                 <Instagram size={14} />
               </a>
-              <a href="#" className="p-2.5 border transition-opacity hover:opacity-60" style={{ borderColor: muted, color: text }}>
+              <a href="https://www.facebook.com/NABparo/" target="_blank" rel="noopener noreferrer" className="p-2.5 border transition-opacity hover:opacity-60" style={{ borderColor: muted, color: text }}>
                 <Facebook size={14} />
               </a>
             </div>
