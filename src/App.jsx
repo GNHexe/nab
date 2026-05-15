@@ -1453,14 +1453,15 @@ function WholesalePage() {
               <p className="mt-5 max-w-md" style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: '#ffffff85', fontSize: 14, lineHeight: 1.65 }}>
                 Bottle formats, FOB pricing, case quantities, brewery capacity. Everything you need before the conversation.
               </p>
-              <button
-                onClick={() => alert('PDF download — wired up at production')}
+              <a
+                href="/Namgay Artisanal Brewery Catalogue 2026.pdf"
+                download
                 className="mt-6 inline-flex items-center justify-between gap-5 px-5 py-3 text-[11px] uppercase border transition-colors hover:bg-white/5"
                 style={{ fontFamily: "'IBM Plex Mono', monospace", borderColor: C.gold, color: C.bone, letterSpacing: '0.14em' }}
               >
                 <span className="flex items-center gap-2.5"><Download size={13} /> DOWNLOAD PDF</span>
                 <ArrowUpRight size={12} />
-              </button>
+              </a>
             </div>
 
             <div className="col-span-12 md:col-span-5 flex justify-center">
