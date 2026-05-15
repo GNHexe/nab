@@ -493,7 +493,7 @@ function Footer({ dark }) {
             </div>
             <div className="mt-5 max-w-xs">
               <p style={{ fontFamily: "'IBM Plex Sans', sans-serif", color: muted, fontSize: 13, lineHeight: 1.6 }}>
-                Bhutan's only craft brewery.<br />
+                Bhutan's only red rice brewery.<br />
                 Brewing with red rice since 2015.
               </p>
             </div>
@@ -635,7 +635,7 @@ function HomePage({ setPage }) {
               fontStretch: '90%',
             }}>
               BHUTAN'S<br />
-              ONLY <span style={{ color: C.gold }}>CRAFT</span><br />
+              ONLY <span style={{ color: C.gold }}>RED RICE</span><br />
               BREWERY.
             </h1>
             <div className="mt-5 max-w-md">
