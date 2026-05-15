@@ -499,11 +499,11 @@ function Footer({ dark }) {
             </div>
           </div>
 
-          <div className="sm:col-span-2 flex items-center justify-center">
+          <div className="sm:col-span-2 w-full flex justify-center items-center">
             <img
               src="/images/IMG_6949.PNG"
               alt="Namgay Artisanal Brewery crest"
-              style={{ height: 80, width: 'auto', display: 'block' }}
+              style={{ height: 80, width: 'auto', display: 'block', margin: '0 auto' }}
             />
           </div>
 
