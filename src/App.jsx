@@ -333,36 +333,19 @@ function PatternBand({ color = C.gold, height = 36, opacity = 1, animate = true 
   );
 }
 
-// The BHUTANESE wordmark — recreated to match the real custom letterforms
-// (Heavy slab serifs, calligraphic descenders on B and final E)
+// The BHUTANESE wordmark — real artwork
 function BhutaneseWordmark({ color = C.ink, height = 40, maxWidth = '100%' }) {
   return (
-    <svg
-      viewBox="0 0 720 96"
-      preserveAspectRatio="xMidYMid meet"
+    <img
+      src="/images/IMG_6950.PNG"
+      alt="BHUTANESE"
       style={{
         display: 'block',
-        width: '100%',
+        height,
+        width: 'auto',
         maxWidth,
-        height: 'auto',
-        maxHeight: height,
       }}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <text
-        x="360"
-        y="72"
-        fontSize="78"
-        fontFamily="'Archivo Black', sans-serif"
-        fontWeight="900"
-        fill={color}
-        textAnchor="middle"
-        letterSpacing="-2"
-        style={{ fontStretch: '90%' }}
-      >
-        BHUTANESE
-      </text>
-    </svg>
+    />
   );
 }
 
@@ -485,6 +468,13 @@ function Footer({ dark }) {
   return (
     <footer style={{ background: bg, color: text }} className="border-t" >
       <div className="px-5 sm:px-8 pt-12 pb-6">
+        <div className="flex justify-center mb-6">
+          <img
+            src="/images/IMG_6949.PNG"
+            alt="Namgay Artisanal Brewery crest"
+            style={{ height: 80, width: 'auto', display: 'block' }}
+          />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8">
           <div className="sm:col-span-6">
             <div style={{ height: 36 }}>
